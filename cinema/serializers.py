@@ -39,7 +39,15 @@ class MovieImageSerializer(serializers.ModelSerializer):
 class MovieSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movie
-        fields = "__all__"
+        fields = (
+            "id",
+            "title",
+            "description",
+            "duration",
+            "image",
+            "genres",
+            "actors"
+        )
         read_only_fields = ("image",)
 
 
@@ -58,7 +66,15 @@ class MovieDetailSerializer(MovieSerializer):
 
     class Meta:
         model = Movie
-        fields = "__all__"
+        fields = (
+            "id",
+            "title",
+            "description",
+            "duration",
+            "image",
+            "genres",
+            "actors"
+        )
 
 
 class MovieSessionSerializer(serializers.ModelSerializer):
